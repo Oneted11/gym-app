@@ -14,6 +14,10 @@ function SearchExercises() {
         exerciseOptions
       );
       console.log(exerciseData);
+      console.log(
+        "key>>>>>>>>>>>>>>>>>>>>>>>>>>>",
+        process.env.REACT_APP_RAPID_API_KEY
+      );
     }
   };
 

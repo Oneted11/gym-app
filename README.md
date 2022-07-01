@@ -4,6 +4,20 @@
 
 `npm install --legacy-peer-deps`
 
+## how to use environment variables in react
+
+This is apparently an inbuilt feature of react-scripts since version 0.5.0 . To make it work you will need to do 2 things.
+
+> 1. create a .env file in your projects root directory
+> 2. name your variables starting with `REACT_APP_`
+
+after that you can call them at anytime within your code as such
+`process.env.REACT_APP_MYVAR`
+
+more info on this can be found on [stackoverflow](https://stackoverflow.com/questions/49108136/importing-env-variable-react-front-end)
+
+> ### Note that you will require to restart your server for it to function
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
