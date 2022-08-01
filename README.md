@@ -18,6 +18,23 @@ more info on this can be found on [stackoverflow](https://stackoverflow.com/ques
 
 > ### Note that you will require to restart your server for it to function
 
+## Deleting object Properties
+
+Say you have an object such as
+
+```javascript
+const myCat = {
+  name: "snuggles",
+  tails: "two",
+};
+```
+
+and you come to the realisation that almost no cats have more than one tail :-( and thus adding this fascinating tidbit is a waste of precious bit space so you need to delete this property hence
+
+> `delete myCat.tails` <br>or<br> `delete myCat["tails"]`
+
+funny how you would think it would be something in the lines of `myCat.delete("tails)` but no, which makes it all the more interesting
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
