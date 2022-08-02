@@ -35,6 +35,32 @@ and you come to the realisation that almost no cats have more than one tail :-( 
 
 funny how you would think it would be something in the lines of `myCat.delete("tails)` but no, which makes it all the more interesting
 
+## Reducers andd how they work
+
+I finally understood reducer after going through the [redux docs](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
+
+```javascript
+const numbers = [2, 5, 8];
+
+const addNumbers = (previousResult, currentItem) => {
+  console.log({ previousResult, currentItem });
+  return previousResult + currentItem;
+};
+
+const initialValue = 0;
+
+const total = numbers.reduce(addNumbers, initialValue);
+// {previousResult: 0, currentItem: 2}
+// {previousResult: 2, currentItem: 5}
+// {previousResult: 7, currentItem: 8}
+
+console.log(total);
+// 15
+```
+
+> **_Array.reduce()_** takes a callback function as an argument, which will be called one time for each item in the array. It takes two arguments:<br>**previousResult**, the value that your callback returned last time <br>**currentItem**, the current item in the array<br>
+> The first time that the callback runs, there isn't a previousResult available, so we need to also pass in an **initial value** that will be used as the first previousResult<br>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
