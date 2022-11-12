@@ -4,9 +4,9 @@ import { Box, Stack, Button, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchdata } from "../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 
-function SearchExercises() {
+function SearchExercises({ setExercises, bodyPart, setbodyPart }) {
   const [search, setSearch] = useState("");
-  const [exercises, setExercises] = useState([]);
+
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,8 @@ function SearchExercises() {
       );
       setBodyParts(["all", ...bodyPartsData]);
     };
-    fetchexercisesData().then(setTimeout(console.log(bodyParts), 2));
+    fetchexercisesData();
+    // .then(setTimeout(console.log(bodyParts), 2));
     // console.log("bodyparts data>>>>>>>>>>>>>>>>>>>>", bodyParts);
     console.log("useeffect is firing");
   }, []);
@@ -38,17 +39,6 @@ function SearchExercises() {
       );
       setSearch("");
       setExercises(searchedExercises);
-      //console.log(
-      //   "myfilter>>>>>",
-      // exerciseData.filter((exercise) => exercise.equipment.includes(search))
-      // );
-      // console.log({ searchedExercises });
-      console.log(
-        { search },
-        exercisesData,
-        { searchedExercises },
-        { exercises }
-      );
     }
   };
 
@@ -97,7 +87,13 @@ function SearchExercises() {
         </Button>
       </Box>
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
-        {bodyParts && <HorizontalScrollbar data={bodyParts} />}
+        {bodyParts && (
+          <HorizontalScrollbar
+            data={bodyParts}
+            bodyPart={bodyPart}
+            setbodyPart={setbodyPart}
+          />
+        )}
       </Box>
     </Stack>
   );
