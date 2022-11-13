@@ -20,7 +20,7 @@ function Home() {
       <Exercises
         setExercises={setExercises}
         bodyPart={bodyPart}
-        setbodyPart={setBodyPart}
+        exercises={exercises}
       />
     </Box>
   );
