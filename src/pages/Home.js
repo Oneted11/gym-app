@@ -9,7 +9,7 @@ function Home() {
   const [bodyPart, setBodyPart] = useState("all");
   const [exercises, setExercises] = useState([]);
 
-  console.log({ bodypart });
+  console.log({ bodyPart });
 
   return (
     <Box>
